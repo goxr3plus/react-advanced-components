@@ -10,12 +10,6 @@ module.exports = {
     filename: 'bundle.js', //final file name
     libraryTarget: 'commonjs2'
   },
-  // entry: "./src/index.js",
-  // output: {
-  //   path: path.resolve("build"),
-  //   filename: "index.js",
-  //   libraryTarget: "commonjs2"
-  // },
   module: {
     rules: [
       {
