@@ -10,9 +10,9 @@ module.exports = () => {
     devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map', // show original source code so we don't get lost inside bundle.js when errors happen
     entry: './src/index.js', //which file to use as entry
     output: {
-      path: path.join(__dirname, 'public', 'dist'),
-      filename: 'bundle.js', //final file name
-      // libraryTarget: 'commonjs2'
+      path: path.join(__dirname, 'build'),
+      filename: 'bundle.js' //final file name
+      // ...(isProduction && { libraryTarget: 'commonjs2' })
     },
     module: {
       rules: [
@@ -44,7 +44,7 @@ module.exports = () => {
       compress: false, //compress bundle.js
       port: devServerPort, //final application running port [localhost:9000]
       historyApiFallback: true, //We gonna handle routing from client side
-      publicPath: '/dist/'
+      publicPath: '/build/'
     }
     // externals: {
     //   react: 'react'
