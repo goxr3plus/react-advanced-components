@@ -1,32 +1,41 @@
 var path = require("path");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  entry: "./index.js",
+  mode: "production",
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve("build"),
     filename: "index.js",
     libraryTarget: "commonjs2"
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        include: path.resolve(__dirname, "src"),
-        exclude: /(node_modules|bower_components|build)/,
+        test: /\.(js|jsx)$/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["env"]
+            presets: [
+              "react",
+              ["env", { targets: { browsers: ["last 2 versions"] } }]
+            ],
+            plugins: [
+              "transform-object-rest-spread",
+              "transform-class-properties",
+              "syntax-decorators",
+              "transform-decorators-legacy"
+            ]
           }
-        }
+        },
+        exclude: /node_modules/
       },
       {
-        test: /\.*css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: ["css-loader", "sass-loader"]
-        })
+        test: /\.(scss|css)$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader", options: { sourceMap: true } },
+          { loader: "sass-loader", options: { sourceMap: true } }
+        ]
       }
     ]
   },
