@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import app from './app'
 
-function Component() {
-  return <div>Our package</div>;
-}
-
-export default Component;
+ReactDOM.render(app, document.getElementById('app'))
