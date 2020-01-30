@@ -8,6 +8,10 @@
   "license": "GNU 3",
   "author": "Alexanter Kentros",
   "main": "index.js",
+  "bugs": {
+    "url": "https://github.com/goxr3plus/react-advanced-components/issues"
+  },
+  "homepage": "https://github.com/goxr3plus/react-advanced-components#readme",
   "scripts": {
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build:prod": "cross-env NODE_ENV=production webpack",
