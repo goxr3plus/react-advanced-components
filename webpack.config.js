@@ -12,7 +12,7 @@ module.exports = () => {
     output: {
       path: path.join(__dirname, 'public', 'dist'),
       filename: 'bundle.js', //final file name
-      libraryTarget: 'commonjs2'
+      // libraryTarget: 'commonjs2'
     },
     module: {
       rules: [
