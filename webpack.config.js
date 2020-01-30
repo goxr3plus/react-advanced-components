@@ -11,8 +11,8 @@ module.exports = () => {
     entry: './src/index.js', //which file to use as entry
     output: {
       path: path.join(__dirname, 'public', 'dist'),
-      filename: 'bundle.js' //final file name
-      // libraryTarget: 'commonjs2'
+      filename: 'bundle.js', //final file name
+      libraryTarget: 'commonjs2'
     },
     module: {
       rules: [
@@ -21,8 +21,8 @@ module.exports = () => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-react', '@babel/preset-env']
-              // plugins: ['transform-object-rest-spread', 'transform-class-properties', 'syntax-decorators', 'transform-decorators-legacy']
+              presets: ['@babel/preset-react', '@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread']
             }
           },
           exclude: /node_modules/
