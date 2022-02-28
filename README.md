@@ -3,7 +3,7 @@
 - Table
 - Pagination  
 - Jump to Page  
-- Show x elements  
+- Show x elements   
 - etc...      
      
 //TODO
