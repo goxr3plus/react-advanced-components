@@ -1,7 +1,7 @@
 # React-Advanced-Components
 
 - Table
-- Pagination    
+- Pagination     
 - Jump to Page  
 - Show x elements   
 - etc...      
